@@ -20,5 +20,5 @@ const versionName = kms.cryptoKeyVersionPath(
 ```
 
 ## Send
-> send.ts에 tagetAddress, amount 입력후 `ts-node send.ts`
-> configuration에서 설정한 gcp hsm key에서 targetAddress로 amount만큼 전송
+- send.ts에 tagetAddress, amount 입력후 `ts-node send.ts`로 실행
+- configuration에서 설정한 gcp hsm key에서 targetAddress로 amount만큼 전송
