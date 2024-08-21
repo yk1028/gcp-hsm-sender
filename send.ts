@@ -2,7 +2,7 @@ import { Key, MsgSend } from '@xpla/xpla.js';
 import { GcpHsmKey } from './hsm/GcpHsmKey';
 import { GcpHsmSigner } from './hsm/GcpHsmSigner';
 
-import { kms, versionName, xpla_testnet } from './config';
+import { kms, versionName, xpla } from './config';
 
 const send = async () => {
 
@@ -14,7 +14,7 @@ const send = async () => {
 	const pubkey = await gcpHsmUtils.getPublicKey();
 	const gcpHsmKey: Key = new GcpHsmKey(gcpHsmUtils, pubkey);
 
-	const gcpHsmWallet = xpla_testnet.wallet(gcpHsmKey);
+	const gcpHsmWallet = xpla.wallet(gcpHsmKey);
 
 	console.log("GCP HSM wallet addr = ", gcpHsmWallet.key.accAddress);
 
@@ -29,7 +29,7 @@ const send = async () => {
 			msgs: [send]
 		})
 
-		const result = await xpla_testnet.tx.broadcast(tx);
+		const result = await xpla.tx.broadcast(tx);
 
 		console.log("+++ result: ", result);
 	} catch (err) {
