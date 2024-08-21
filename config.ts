@@ -16,7 +16,6 @@ export const xpla_mainnet = new LCDClient({
 // GCP HSM
 export const kms = new KeyManagementServiceClient({ keyFile: './service-account.json' });
 
-// Test
 export const versionName = kms.cryptoKeyVersionPath(
     "h-common",
     "asia-northeast3",

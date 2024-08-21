@@ -26,8 +26,7 @@ const send = async () => {
 
 	try {
 		const tx = await gcpHsmWallet.createAndSignTx({
-			msgs: [send],
-			memo: 'gcp hsm send test',
+			msgs: [send]
 		})
 
 		const result = await xpla_testnet.tx.broadcast(tx);
